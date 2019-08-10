@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<h2>INTRODUCTION TO JQUERY</h2>
+<h1>Web Safe Font Preview</h1>
+
+<p>
+While there are many fonts you can purchase and add to your site, there are also several free, web safe fonts that work across all browsers. Your company wants you to build a simple app to preview different web safe fonts, sizes, and weights. With jQuery, it’s a snap!
+</p><p>
+If you get stuck during this project or would like to see an experienced developer work through it, click “Get Help“ to see a project walkthrough video.
+</p>
+
+<div class="video">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/_ICEqxIPgxg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h3>Tasks</h3>
+
+<p>
+Mark the tasks as complete by checking them off
+</p>
+
+<ol>
+<li> <!--1.-->
+<p>
+To begin, look at index.html:
+</p><p>
+There are three fields in the <code>&lt;form&gt;</code>, two <code>&lt;select&gt;</code> menus, and an <code>&lt;input&gt;</code>. We will target each of these fields by its id.
+</p><p>
+There is also a <code>&lt;textarea&gt;</code> where the user will enter the text to preview. We can also target this field by id.
+</p><p>
+We will use the keyup event handler to update the preview text, so we don’t need a submit button.
+</p><p>
+Now navigate to main.js to start coding.
+</li>
+
+<!--2.-->
+<li>
+<p> In the main function in main.js, add a keyup event handler to '#text'. Make sure it takes a parameter: event.</p>
+
+<div class="hint">
+<p>
+The syntax for your event handler might look something like:
+</p><p><code>
+$('#idOfSomeElement').handlerMethod('nameOfEvent', (parameterForCallback) => {<br>
+});</code>
+</p><p>
+Identify what event you want to add and to which element.
+</p></div>
+</li>
+
+<!--3.-->
+<li>
+<p> In the keyup callback function, call the html method on the '.preview' element and pass it the current value of $(event.currentTarget), the updated input field, by using the .val() method.
+</p><p>
+Then test that entered text is being added to the preview after each keystroke.
+</p>
+
+<div class="hint">
+<p>
+By calling $('.someClass').html(someArugment) you’re reassigning the HTML contents of the elements with class: someClass.
+</p><p>
+To select an element and call the .html() method on it could look like this:
+</p>
+<p><code>$('.someClass').html(reassignedHTML);</code></p>
+<p>
+To get the value of the current target of an event listener you could use:
+</p>
+<p><code>
+$(event.currentTarget).val()
+</code>
+</div>
+</li>
+
+<!--4.-->
+Under the keyup method, attach a change event handler to the <select> field with an id of "font".
+
+The change event handler will fire anytime the selected value of the '#font' menu changes.
+
+This event handler will be very similar to the keyup event handler for $('#text'). Remember to include event as an argument for your callback function.
+
+<!--5.-->
+In the callback function of the change event handler, use the css method to change the value of the '.preview' element’s font-family property to the current value of this menu.
+
+Now test your app to see that the font of the preview text changes when you select a different font.
+
+The syntax for it might look something like:
+
+$('.someClass').css('cssAttribute', assignedValue)
+
+
+<!--6.-->
+Now add another change event handler, this time to the weight menu.
+
+Just like in the last task, have the callback function set the preview element’s font-weight property to the current value of this menu.
+
+Test that the font-weight changes.
+
+This event handler has the same structure as the previous one. You can select the weight menu using $('#weight'). Remember to include event as an argument in your callback function!
+
+<!--7.-->
+Since the font-size input field requires text to be entered, we’ll use a keyup event handler to change the font-weight of the preview text.
+
+Add a keyup event handler to the font-size field.
+
+Review the previous event handlers to see how to select elements and create triggers.
+
+<!--8.-->
+In the callback function of the keyup event handler, create a variable called fontSize. Set it to the current value of this field, and use the + operator to add 'px'. We do this because we will need to specify the unit for the CSS font-size property in the next step.
+
+<!--9.-->
+Change the font-size property of the preview text to the value stored in fontSize.
+
+You’ll need to call the css method on $('.preview'), change the font-size property using the value fontSize.
+
+<!--10.-->
+Now give it a try! You can now easily preview font sizes, families, and weights to determine the right combinations.
+
+And you could go even further! You can see list of web-safe <a href="https://www.cssfontstack.com/" target="blank">fonts here</a>. Feel free to add them to your <select> menu to make your app even more comprehensive!
+  </ol>
+
+  </body>
+
+
+</html>
